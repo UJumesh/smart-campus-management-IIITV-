@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      max-height: 400px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>API Connection Test</h1>
+  
+  <button id="testResources">Test Resources API</button>
+  <button id="checkStorage">Check Local Storage</button>
+  <button id="clearResults">Clear Results</button>
+  
+  <h2>Results:</h2>
+  <pre id="results"></pre>
+  
+  <script>
+    // Helper function to log results
+    function log(message) {
+      const resultsElement = document.getElementById('results');
+      resultsElement.textContent += message + '\n';
+      console.log(message);
+    }
+    
+    // Helper function to clear results
+    function clearResults() {
+      document.getElementById('results').textContent = '';
+    }
+    
+    // Test resources API
+    document.getElementById('testResources').addEventListener('click', async () => {
+      clearResults();
+      log('Testing Resources API...');
+      
+      // Get token from localStorage
+      const token = localStorage.getItem('token') || 
+                  (localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).token : null);
+      
+      if (!token) {
+        log('ERROR: No authentication token found. Please log in first.');
+        return;
+      }
+      
+      log(`Using token: ${token.substring(0, 10)}...`);
+      
+      try {
+        const response = await fetch('http://localhost:5002/api/resources', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        log(`Response status: ${response.status}`);
+        
+        if (!response.ok) {
+          log(`Error: ${response.statusText}`);
+          const errorData = await response.text();
+          log(`Error details: ${errorData}`);
+          return;
+        }
+        
+        const data = await response.json();
+        log(`Success! Resources count: ${data.count}`);
+        
+        if (data.data && data.data.length > 0) {
+          log('First resource:');
+          log(JSON.stringify(data.data[0], null, 2));
+        } else {
+          log('No resources found in the response.');
+        }
+      } catch (error) {
+        log(`Exception: ${error.message}`);
+      }
+    });
+    
+    // Check local storage
+    document.getElementById('checkStorage').addEventListener('click', () => {
+      clearResults();
+      log('Checking Local Storage...');
+      
+      const token = localStorage.getItem('token');
+      const user = localStorage.getItem('user');
+      
+      log(`Token in localStorage: ${token ? 'Yes' : 'No'}`);
+      log(`User in localStorage: ${user ? 'Yes' : 'No'}`);
+      
+      if (user) {
+        const userData = JSON.parse(user);
+        log('User data:');
+        log(JSON.stringify({
+          name: userData.name,
+          email: userData.email,
+          role: userData.role,
+          hasToken: !!userData.token
+        }, null, 2));
+      }
+    });
+    
+    // Clear results
+    document.getElementById('clearResults').addEventListener('click', clearResults);
+  </script>
+</body>
+</html> 

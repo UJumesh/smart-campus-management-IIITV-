@@ -1,0 +1,9 @@
+{
+  "short_name": "Smart Campus",
+  "name": "Smart Campus Management System",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff"
+} 

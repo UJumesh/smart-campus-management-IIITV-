@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static File Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+      }
+      .success {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+      ul {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 4px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Static File Test</h1>
+    <div class="success">
+      <strong>Success!</strong> If you can see this page, static file serving is
+      working correctly.
+    </div>
+    <p>
+      This is a test page to verify that the server is correctly serving static
+      files from the public directory.
+    </p>
+    <h2>Available API Endpoints:</h2>
+    <ul>
+      <li><a href="/health">/health</a> - Check server health</li>
+      <li>
+        <a href="/api/users">/api/users</a> - Get users (requires
+        authentication)
+      </li>
+      <li><a href="/api/analytics">/api/analytics</a> - Get analytics data</li>
+      <li>
+        <a href="/api/dashboard">/api/dashboard</a> - Get dashboard data
+        (requires authentication)
+      </li>
+    </ul>
+  </body>
+</html>

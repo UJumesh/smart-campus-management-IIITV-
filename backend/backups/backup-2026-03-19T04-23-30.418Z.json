@@ -1,0 +1,679 @@
+{
+  "User": [
+    {
+      "_id": "67ce69e9f19bb359ba81bea7",
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@smartcampus.edu",
+      "role": "admin",
+      "department": "Administration",
+      "status": "active",
+      "lastLogin": "2025-03-18T08:31:56.390Z",
+      "createdAt": "2025-02-08T04:26:17.043Z",
+      "__v": 0,
+      "mainDepartment": "Administration",
+      "subDepartment": "Administration",
+      "id": "67ce69e9f19bb359ba81bea7"
+    },
+    {
+      "_id": "67ce87d21d2448e931306481",
+      "firstName": "poorni",
+      "lastName": "bhagya",
+      "email": "poorni.b@smartcampus.edu",
+      "role": "admin",
+      "department": "Administration",
+      "status": "active",
+      "lastLogin": "2025-03-10T06:34:12.267Z",
+      "createdAt": "2025-03-10T06:33:54.777Z",
+      "__v": 0,
+      "mainDepartment": "Administration",
+      "subDepartment": "Administration",
+      "id": "67ce87d21d2448e931306481"
+    },
+    {
+      "_id": "67ce88d31d2448e931306493",
+      "firstName": "pavani",
+      "lastName": "keshala",
+      "email": "pavani@gmail.com",
+      "role": "lecturer",
+      "department": "School of Science - Computer Science",
+      "status": "inactive",
+      "lastLogin": "2025-03-10T07:12:59.216Z",
+      "createdAt": "2025-03-10T06:38:11.671Z",
+      "__v": 0,
+      "mainDepartment": "School of Science",
+      "subDepartment": "Computer Science",
+      "id": "67ce88d31d2448e931306493"
+    },
+    {
+      "_id": "67ce89b667c7f70448c06cfb",
+      "firstName": "John",
+      "lastName": "Cena",
+      "email": "john.cena@smartcampus.edu",
+      "role": "lecturer",
+      "department": "School of Science - Mathematics",
+      "status": "active",
+      "lastLogin": "2025-03-18T08:35:10.918Z",
+      "createdAt": "2025-02-13T06:41:58.026Z",
+      "__v": 0,
+      "mainDepartment": "School of Science",
+      "subDepartment": "Mathematics",
+      "id": "67ce89b667c7f70448c06cfb"
+    },
+    {
+      "_id": "67ceb6875df8207267ff9081",
+      "firstName": "Jane",
+      "lastName": "Froster",
+      "email": "jane.froster@smartcampus.edu",
+      "role": "student",
+      "status": "active",
+      "lastLogin": "2025-03-18T07:46:51.342Z",
+      "createdAt": "2025-02-18T09:53:11.982Z",
+      "mainDepartment": "School of Science",
+      "subDepartment": "Computer Science",
+      "__v": 0,
+      "id": "67ceb6875df8207267ff9081",
+      "department": "School of Science - Computer Science"
+    },
+    {
+      "_id": "67d6a12dbf7b73cb37b5fe98",
+      "firstName": "janaka",
+      "lastName": "sameera",
+      "email": "janakasameera0@gmail.com",
+      "role": "lecturer",
+      "mainDepartment": "School of Science",
+      "subDepartment": "Chemistry",
+      "status": "active",
+      "lastLogin": "2025-03-18T08:27:47.551Z",
+      "createdAt": "2025-03-16T10:00:13.919Z",
+      "__v": 0,
+      "id": "67d6a12dbf7b73cb37b5fe98",
+      "department": "School of Science - Chemistry"
+    },
+    {
+      "_id": "67d72a14f1f52da58cd07ab6",
+      "firstName": "chavindu",
+      "lastName": "padukka",
+      "email": "chavindu@gmail.com",
+      "role": "student",
+      "mainDepartment": "School of Science",
+      "subDepartment": "Computer Science",
+      "status": "active",
+      "lastLogin": "2025-03-18T08:38:51.382Z",
+      "createdAt": "2025-03-16T19:44:20.940Z",
+      "__v": 0,
+      "id": "67d72a14f1f52da58cd07ab6",
+      "department": "School of Science - Computer Science"
+    }
+  ],
+  "Registration": [],
+  "Resource": [
+    {
+      "location": {
+        "building": "block c",
+        "floor": "ground",
+        "roomNumber": ""
+      },
+      "_id": "67d71951c71800c52b62e55b",
+      "name": "Swimming Pool",
+      "type": "classroom",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": true,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T18:32:49.501Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block A",
+        "floor": "2nd floor",
+        "roomNumber": "12"
+      },
+      "_id": "67d719c5c71800c52b62e56a",
+      "name": "Computer Lab 1",
+      "type": "classroom",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": true,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T18:34:45.910Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block A",
+        "floor": "2nd floor",
+        "roomNumber": "12"
+      },
+      "_id": "67d71a8bc71800c52b62e56d",
+      "name": "Computer Lab 1",
+      "type": "classroom",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": true,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T18:38:03.417Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block e",
+        "floor": "ground",
+        "roomNumber": ""
+      },
+      "_id": "67d71d2a4a0d6681fd43438b",
+      "name": "ground",
+      "type": "facility",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": true,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T18:49:14.970Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block e",
+        "floor": "ground",
+        "roomNumber": ""
+      },
+      "_id": "67d71dc24a0d6681fd43438e",
+      "name": "ground",
+      "type": "facility",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": true,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T18:51:46.836Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block c",
+        "floor": "2nd floor",
+        "roomNumber": ""
+      },
+      "_id": "67d71f633ac8adf98dc94a1f",
+      "name": "Computer Lab 1",
+      "type": "classroom",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": false,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T18:58:43.924Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block c",
+        "floor": "2nd floor",
+        "roomNumber": ""
+      },
+      "_id": "67d71f973ac8adf98dc94a34",
+      "name": "Janith Rajindra",
+      "type": "classroom",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": false,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T18:59:35.400Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block c",
+        "floor": "2nd floor",
+        "roomNumber": ""
+      },
+      "_id": "67d7206e3ac8adf98dc94a37",
+      "name": "Janith Rajindra",
+      "type": "classroom",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": false,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T19:03:10.988Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block A",
+        "floor": "ground",
+        "roomNumber": "10"
+      },
+      "_id": "67d7211f3ac8adf98dc94a85",
+      "name": "cantima",
+      "type": "other",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": true,
+      "allowedRoles": [
+        "lecturer",
+        "admin"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T19:06:07.287Z",
+      "__v": 0
+    },
+    {
+      "location": {
+        "building": "block B",
+        "floor": "3rd floor",
+        "roomNumber": "11"
+      },
+      "_id": "67d7af7a5a3e695652f68f64",
+      "name": "gymnasium",
+      "type": "facility",
+      "capacity": 30,
+      "description": "",
+      "features": [],
+      "availability": true,
+      "maintenanceSchedule": [],
+      "images": [],
+      "reservationRequiresApproval": false,
+      "allowedRoles": [
+        "lecturer",
+        "admin",
+        "student"
+      ],
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-17T05:13:30.146Z",
+      "__v": 0
+    }
+  ],
+  "Event": [
+    {
+      "_id": "67d7304ff1f52da58cd07baa",
+      "title": "hackathon",
+      "description": "...",
+      "startDate": "2025-03-24T03:30:15.460Z",
+      "endDate": "2025-03-24T11:30:15.460Z",
+      "venue": "computer lab 01",
+      "organizer": "67ce69e9f19bb359ba81bea7",
+      "department": "School of Engineering",
+      "category": "Academic",
+      "targetAudience": "Students",
+      "capacity": 100,
+      "attendees": [
+        "67d72a14f1f52da58cd07ab6",
+        "67ceb6875df8207267ff9081"
+      ],
+      "isFeatured": true,
+      "status": "upcoming",
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-16T20:10:55.029Z",
+      "updatedAt": "2025-03-18T04:35:42.638Z",
+      "__v": 2
+    },
+    {
+      "_id": "67d7a62e5a3e695652f68f16",
+      "title": "prarthibha",
+      "description": "concert",
+      "startDate": "2025-03-31T12:30:23.906Z",
+      "endDate": "2025-03-31T18:25:23.906Z",
+      "venue": "campus grounds",
+      "organizer": "67ce69e9f19bb359ba81bea7",
+      "department": "School of Engineering",
+      "category": "Social",
+      "targetAudience": "All",
+      "capacity": 10000,
+      "attendees": [
+        "67d72a14f1f52da58cd07ab6",
+        "67ceb6875df8207267ff9081"
+      ],
+      "isFeatured": false,
+      "status": "upcoming",
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-17T04:33:50.953Z",
+      "updatedAt": "2025-03-18T04:37:18.868Z",
+      "__v": 2
+    },
+    {
+      "_id": "67d8fa7ccf94aeeba2c7de97",
+      "title": "cricket festival",
+      "description": "cricket match for students",
+      "startDate": "2025-03-21T02:30:05.264Z",
+      "endDate": "2025-03-21T12:30:05.264Z",
+      "venue": "campus grounds",
+      "organizer": "67ce69e9f19bb359ba81bea7",
+      "department": "School of Medicine & Health Sciences",
+      "category": "Sports",
+      "targetAudience": "All",
+      "capacity": 500,
+      "attendees": [
+        "67ceb6875df8207267ff9081"
+      ],
+      "isFeatured": false,
+      "status": "upcoming",
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-18T04:45:48.948Z",
+      "updatedAt": "2025-03-18T04:46:43.657Z",
+      "__v": 1
+    }
+  ],
+  "Analytics": [
+    {
+      "_id": "67d546be9c9508f7b2d863d3",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T09:22:06.859Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d547d6bc59eb2a212b73dc",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T09:26:46.694Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d54a3b85de5bca344a3f02",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T09:36:59.496Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d54aa52c5654280fb2c5c5",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T09:38:45.775Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d54ae2ad1b713e6ff73ba2",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T09:39:46.628Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d5cc895269c1323acdfbd4",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T18:52:57.411Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d5cd36330ad8482548130c",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T18:55:50.659Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d5d1593e392b6fbd72f357",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T19:13:29.224Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d5d78aeffc89fb8e0c7b5a",
+      "type": "user",
+      "category": "authentication",
+      "action": "login",
+      "value": 1,
+      "user": "67ce69e9f19bb359ba81bea7",
+      "userRole": "admin",
+      "relatedModel": null,
+      "metadata": {
+        "method": "email",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+      },
+      "timestamp": "2025-03-15T19:39:54.818Z",
+      "__v": 0
+    }
+  ],
+  "Notification": [],
+  "Conversation": [
+    {
+      "_id": "67d904f9884554f027599669",
+      "name": "hnd/com/2022",
+      "type": "group",
+      "participants": [
+        {
+          "user": "67ce69e9f19bb359ba81bea7",
+          "role": "admin",
+          "lastSeen": "2025-03-18T05:30:33.548Z",
+          "_id": "67d904f9884554f02759966a",
+          "joinedAt": "2025-03-18T05:30:33.110Z"
+        },
+        {
+          "user": "67d72a14f1f52da58cd07ab6",
+          "role": "member",
+          "_id": "67d904f9884554f02759966b",
+          "joinedAt": "2025-03-18T05:30:33.111Z"
+        },
+        {
+          "user": "67ceb6875df8207267ff9081",
+          "role": "member",
+          "_id": "67d904f9884554f02759966c",
+          "joinedAt": "2025-03-18T05:30:33.111Z"
+        },
+        {
+          "user": "67ce87d21d2448e931306481",
+          "role": "member",
+          "_id": "67d904f9884554f02759966d",
+          "joinedAt": "2025-03-18T05:30:33.112Z"
+        }
+      ],
+      "isArchived": false,
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-18T05:30:33.112Z",
+      "updatedAt": "2025-03-18T05:30:33.123Z",
+      "__v": 0,
+      "unreadCount": 0,
+      "id": "67d904f9884554f027599669"
+    },
+    {
+      "_id": "67d9050f884554f027599696",
+      "type": "direct",
+      "participants": [
+        {
+          "user": "67ce69e9f19bb359ba81bea7",
+          "role": "member",
+          "lastSeen": "2025-03-18T05:31:11.512Z",
+          "_id": "67d9050f884554f027599697",
+          "joinedAt": "2025-03-18T05:30:55.456Z"
+        },
+        {
+          "user": "67d72a14f1f52da58cd07ab6",
+          "role": "member",
+          "_id": "67d9050f884554f027599698",
+          "joinedAt": "2025-03-18T05:30:55.457Z"
+        }
+      ],
+      "isArchived": false,
+      "createdBy": "67ce69e9f19bb359ba81bea7",
+      "createdAt": "2025-03-18T05:30:55.457Z",
+      "updatedAt": "2025-03-18T05:30:55.458Z",
+      "__v": 0,
+      "lastMessage": "67d9051f884554f0275996b9",
+      "lastMessageAt": "2025-03-18T05:31:11.504Z",
+      "unreadCount": 0,
+      "id": "67d9050f884554f027599696"
+    }
+  ],
+  "Message": [
+    {
+      "_id": "67d904f9884554f02759966f",
+      "sender": "67ce69e9f19bb359ba81bea7",
+      "conversation": "67d904f9884554f027599669",
+      "content": "Admin User created the group \"hnd/com/2022\"",
+      "attachments": [],
+      "isSystemMessage": true,
+      "readBy": [
+        {
+          "user": "67ce69e9f19bb359ba81bea7",
+          "readAt": "2025-03-18T05:30:33.562Z",
+          "_id": "67d904f9884554f02759968f"
+        }
+      ],
+      "createdAt": "2025-03-18T05:30:33.135Z",
+      "updatedAt": "2025-03-18T05:30:33.138Z",
+      "__v": 0
+    },
+    {
+      "_id": "67d9051f884554f0275996b9",
+      "sender": "67ce69e9f19bb359ba81bea7",
+      "conversation": "67d9050f884554f027599696",
+      "content": "submit the assignmnet of dbms",
+      "attachments": [],
+      "readBy": [
+        {
+          "user": "67ce69e9f19bb359ba81bea7",
+          "_id": "67d9051f884554f0275996ba",
+          "readAt": "2025-03-18T05:31:11.504Z"
+        }
+      ],
+      "isSystemMessage": false,
+      "createdAt": "2025-03-18T05:31:11.504Z",
+      "updatedAt": "2025-03-18T05:31:11.504Z",
+      "__v": 0
+    }
+  ],
+  "Reservation": [],
+  "Schedule": []
+}

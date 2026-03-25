@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Campus Management System API</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+      }
+      .card {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .success {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      code {
+        background-color: #f1f1f1;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+      }
+      .endpoint {
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #e9ecef;
+        border-radius: 4px;
+      }
+      .method {
+        font-weight: bold;
+        color: #0366d6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Smart Campus Management System API</h1>
+    <div class="success">
+      <strong>Server is running!</strong> The API is available and ready to
+      accept requests.
+    </div>
+
+    <div class="card">
+      <h2>API Information</h2>
+      <p>
+        This is the backend API for the Smart Campus Management System. It
+        provides endpoints for user authentication, user management, analytics,
+        and dashboard data.
+      </p>
+      <p>Version: 1.0.0</p>
+      <p>Environment: Development</p>
+    </div>
+
+    <div class="card">
+      <h2>Available Endpoints</h2>
+
+      <div class="endpoint">
+        <span class="method">GET</span> <code>/health</code>
+        <p>Check the health status of the API server.</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method">POST</span> <code>/api/auth/login</code>
+        <p>Authenticate a user and get a token.</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method">POST</span> <code>/api/auth/register</code>
+        <p>Register a new user.</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method">GET</span> <code>/api/auth/logout</code>
+        <p>Log out a user (requires authentication).</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method">GET</span> <code>/api/users</code>
+        <p>Get a list of users (requires authentication).</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method">GET</span> <code>/api/analytics</code>
+        <p>Get analytics data (requires authentication).</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method">GET</span> <code>/api/dashboard</code>
+        <p>Get dashboard data (requires authentication).</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Frontend Application</h2>
+      <p>
+        The frontend application is available at:
+        <a href="http://localhost:3000" target="_blank"
+          >http://localhost:3000</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
