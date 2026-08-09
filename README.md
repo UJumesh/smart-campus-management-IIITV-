@@ -1,2332 +1,1772 @@
-🏫 Smart Campus Management System
+# 🏫 Smart Campus Management System
 
-A full-stack Smart Campus Management System built with the MERN stack to provide a centralized platform for managing campus users, events, schedules, resources, reservations, notifications, communication, and administrative analytics.
+A full-stack **Smart Campus Management System** designed to centralize and simplify campus activities such as user management, events, resource reservations, scheduling, notifications, real-time communication, and administrative analytics.
 
-The application supports three primary roles:
+The system provides role-based access for **Administrators, Lecturers, and Students** and is built using **React, Node.js, Express.js, MongoDB, Mongoose, and Socket.IO**.
 
-Admin
+---
 
-Lecturer
+## 📌 Overview
 
-Student
+The Smart Campus Management System provides a centralized platform where students, lecturers, and administrators can access campus services according to their roles.
 
-The project is organized as a separate React frontend and Node.js/Express backend, with MongoDB/Mongoose for persistence and Socket.IO for real-time communication.
+The application combines a modern React frontend with a Node.js/Express backend and MongoDB database to provide a centralized campus-management platform.
 
-Project status: Active Development / Academic ProjectSome modules are fully implemented while others, such as the Courses module and parts of the Schedule/Attendance functionality, are still under development or contain placeholder endpoints.
+### Core Areas
 
-📌 Table of Contents
+- Authentication and authorization
+- Role-based access control
+- User management
+- Event management
+- Event registration and check-in
+- Campus resource management
+- Resource reservations
+- Reservation approval and conflict detection
+- Scheduling and calendar management
+- Real-time messaging
+- Notifications
+- Administrative analytics
+- Profile management
 
-Project Overview
+---
 
-Objectives
+## 🎯 Objectives
 
-Features
+The main objectives of this project are:
 
-Authentication
+- Centralize campus-related operations
+- Provide role-based access to campus services
+- Simplify event creation and registration
+- Improve campus resource utilization
+- Reduce resource reservation conflicts
+- Provide centralized scheduling
+- Improve communication between students, lecturers, and administrators
+- Provide administrative statistics and analytics
+- Provide a scalable foundation for future campus modules
 
-Role-Based Access
+---
 
-User Management
+# ✨ Features
 
-Event Management
+## 🔐 Authentication & Authorization
 
-Resource Management
+The application uses JWT-based authentication with role-based authorization.
 
-Reservations
+### Features
 
-Schedule & Calendar
+- User registration
+- User login
+- Logout
+- JWT authentication
+- JWT verification
+- JWT refresh
+- Password hashing using bcrypt
+- Password update
+- Forgot-password flow
+- Password reset
+- Protected routes
+- Role-based authorization
+- Current-user information
+- Login tracking
 
-Messaging
+### Authentication Module
 
-Notifications
+The authentication system is responsible for securely identifying users and controlling access to protected application resources.
 
-Analytics
+---
 
-Courses
+# 👥 Role-Based Access Control
 
-Technology Stack
+The system supports three primary user roles:
 
-System Architecture
+| Role | Description |
+|------|-------------|
+| 👨‍💼 Admin | Manages users, events, resources, reservations, analytics and administrative operations |
+| 👨‍🏫 Lecturer | Manages campus/academic activities and interacts with students |
+| 🎓 Student | Accesses events, resources, schedules, notifications and communication |
 
-Project Structure
+Protected routes and role-based authorization are used to restrict access to different areas of the application.
 
-User Roles
+---
 
-Database Models
+# 👤 User Management
 
-API Modules
+Administrators can manage campus users through the administration interface.
 
-Requirements
+### Features
 
-Installation
-
-Environment Configuration
-
-Running the Application
-
-Application Workflows
-
-Security
-
-Testing
-
-Production Build
-
-Screenshots
-
-Current Implementation Status
-
-Known Development Notes
-
-Future Improvements
-
-Contribution
-
-Git Workflow
-
-Author
-
-Disclaimer
-
-📖 Project Overview
-
-The Smart Campus Management System is designed to bring common campus activities into a single web application.
-
-Instead of managing events, campus resources, reservations, schedules, communication, and user administration through separate systems, the application provides a centralized environment where authenticated users can access services according to their role.
-
-Core areas
-
-User authentication and authorization
-
-Student, lecturer, and administrator management
-
-Campus event management
-
-Event registration and attendance/check-in support
-
-Campus resource management
-
-Resource reservation and approval workflow
-
-Scheduling and calendar interface
-
-Direct and group messaging
-
-Notifications
-
-Administrative analytics
-
-Profile management
-
-🎯 Objectives
-
-The project aims to:
-
-Centralize campus-related operations
-
-Provide role-based access to campus services
-
-Simplify event creation and registration
-
-Improve utilization of campus resources
-
-Reduce reservation conflicts
-
-Provide a shared scheduling interface
-
-Improve communication between campus users
-
-Provide administrators with user and system analytics
-
-Provide a scalable foundation for future campus modules
-
-✨ Features
-
-🔐 Authentication
-
-The backend provides an authentication system based on JWT.
-
-Implemented authentication functionality
-
-User registration
-
-User login
-
-Logout
-
-Current-user information
-
-JWT verification
-
-JWT refresh
-
-Password update
-
-Forgot-password flow
-
-Reset-password flow
-
-Protected routes
-
-Role-based authorization
-
-Password hashing with bcrypt
-
-Login timestamp tracking
-
-Authentication endpoints
-
-POST   /api/auth/register
-POST   /api/auth/login
-GET    /api/auth/verify
-GET    /api/auth/me
-GET    /api/auth/logout
-PUT    /api/auth/updatepassword
-POST   /api/auth/refresh-token
-POST   /api/auth/forgotpassword
-PUT    /api/auth/resetpassword/:resettoken
-
-👥 Role-Based Access
-
-The system defines three roles:
-
-Role
-
-Main Responsibilities
-
-👨‍💼 Admin
-
-User management, resources, analytics, event administration, settings
-
-👨‍🏫 Lecturer
-
-Event creation/management, communication, schedules and campus services
-
-🎓 Student
-
-View campus information, events, resources, reservations, schedules and communication
-
-Access to frontend routes is controlled using protected routes and role checks.
-
-👤 User Management
-
-Administrators can manage campus users.
-
-User functionality
-
-View users
-
-Search users
-
-Filter by role
-
-Filter by main department
-
-Filter by sub-department
-
-Filter by status
-
-Create users
-
-Update users
-
-Delete users
-
-Update user profile
-
-Manage user status
-
-Pagination
-
-Auto-refresh of user data
-
-User selection/actions
-
-User roles
-
-admin
-lecturer
-student
-
-User status
-
-active
-inactive
-
-🏛️ Department Structure
-
-The User model contains a main-department/sub-department structure.
-
-Examples include:
-
-School of Engineering
-├── Civil Engineering
-├── Mechanical Engineering
-├── Electrical Engineering
-├── Computer Engineering
-└── Chemical Engineering
-
-School of Business
-├── Business Administration
-├── Finance
-├── Marketing
-├── Accounting
-└── Management
-
-School of Science
-├── Computer Science
-├── Physics
-├── Chemistry
-├── Biology
-└── Mathematics
-
-School of Arts and Humanities
-├── History
-├── Literature
-├── Languages
-├── Philosophy
-└── Cultural Studies
-
-School of Social Sciences
-├── Economics
-├── Psychology
-├── Sociology
-├── Political Science
-└── Anthropology
-
-School of Law
-├── Law
-└── Criminal Justice
-
-School of Medicine & Health Sciences
-├── Medicine
-├── Nursing
-├── Public Health
-└── Pharmacy
-
-Administration is also supported for administrator accounts.
-
-🎉 Event Management
-
-Events are one of the major implemented modules.
-
-Event functionality
-
-View events
-
-View individual event details
-
-Featured events
-
-Filter events
-
-Events by department
-
-Create events
-
-Update events
-
-Delete events
-
-Event registration
-
-Event unregistration
-
-View current user's registrations
-
-View event attendees
-
-Attendee check-in
-
-Featured-event management
-
-Event posters/images
-
-Capacity management
-
-Event status management
-
-Event categories
-
-Academic
-Workshop
-Seminar
-Club
-Sports
-Social
-
-Target audiences
-
-Students
-Lecturers
-All
-
-Event statuses
-
-upcoming
-ongoing
-completed
-cancelled
-
-Event workflow
-
-Admin / Lecturer
-       │
-       ▼
-Create Event
-       │
-       ▼
-Enter Event Details
-       │
-       ▼
-Publish Event
-       │
-       ▼
-Students / Lecturers View Event
-       │
-       ▼
-Register for Event
-       │
-       ▼
-Registration Stored
-       │
-       ▼
-Event Attendance / Check-in
-
-🏢 Campus Resource Management
-
-The system provides a resource-management module for campus facilities and equipment.
-
-Resource types
-
-classroom
-laboratory
-equipment
-facility
-other
-
-Resource information
+- View users
+- Search users
+- Filter users
+- Filter by role
+- Filter by department
+- Filter by sub-department
+- Filter by account status
+- Create users
+- Update users
+- Delete users
+- Update user profile
+- Manage user status
+- Pagination
+- User statistics
+
+### Supported Roles
+
+- `admin`
+- `lecturer`
+- `student`
+
+### Account Status
+
+- `active`
+- `inactive`
+
+---
+
+# 🏛️ Department Management
+
+The user model supports main departments and sub-departments.
+
+The application includes department-based user organization and filtering.
+
+Example structure:
+
+    School of Engineering
+    ├── Civil Engineering
+    ├── Mechanical Engineering
+    ├── Electrical Engineering
+    ├── Computer Engineering
+    └── Chemical Engineering
+
+    School of Business
+    ├── Business Administration
+    ├── Finance
+    ├── Marketing
+    ├── Accounting
+    └── Management
+
+    School of Science
+    ├── Computer Science
+    ├── Physics
+    ├── Chemistry
+    ├── Biology
+    └── Mathematics
+
+    School of Arts and Humanities
+    ├── History
+    ├── Literature
+    ├── Languages
+    ├── Philosophy
+    └── Cultural Studies
+
+    School of Social Sciences
+    ├── Economics
+    ├── Psychology
+    ├── Sociology
+    ├── Political Science
+    └── Anthropology
+
+    School of Law
+    ├── Law
+    └── Criminal Justice
+
+    School of Medicine & Health Sciences
+    ├── Medicine
+    ├── Nursing
+    ├── Public Health
+    └── Pharmacy
+
+---
+
+# 🎉 Event Management
+
+The event module provides functionality for creating, viewing, managing and registering for campus events.
+
+### Features
+
+- Create events
+- View events
+- View event details
+- Update events
+- Delete events
+- Event registration
+- Event unregistration
+- View registered events
+- View event attendees
+- Event check-in
+- Capacity management
+- Featured events
+- Event posters/images
+- Event filtering
+- Department-based events
+
+### Event Categories
+
+- Academic
+- Workshop
+- Seminar
+- Club
+- Sports
+- Social
+
+### Target Audiences
+
+- Students
+- Lecturers
+- All
+
+### Event Status
+
+- `upcoming`
+- `ongoing`
+- `completed`
+- `cancelled`
+
+### Event Workflow
+
+    Admin / Lecturer
+           │
+           ▼
+      Create Event
+           │
+           ▼
+      Publish Event
+           │
+           ▼
+    Users View Event
+           │
+           ▼
+     Register Event
+           │
+           ▼
+ Registration Stored
+           │
+           ▼
+      Event Check-in
+           │
+           ▼
+   Attendance Status
+
+---
+
+# 🏢 Campus Resource Management
+
+The system provides centralized management of campus resources.
+
+### Resource Types
+
+- Classroom
+- Laboratory
+- Equipment
+- Facility
+- Other
+
+### Resource Information
 
 A resource can contain:
 
-Name
+- Resource name
+- Resource type
+- Building
+- Floor
+- Room number
+- Capacity
+- Description
+- Features
+- Availability
+- Maintenance schedule
+- Images
+- Reservation requirements
+- Allowed user roles
+- Creator information
 
-Type
-
-Building
-
-Floor
-
-Room number
-
-Capacity
-
-Description
-
-Features
-
-Availability
-
-Maintenance schedule
-
-Images
-
-Reservation approval requirement
-
-Allowed user roles
-
-Creator information
-
-Resource permissions
+### Administrator Operations
 
 Administrators can:
 
-Create resources
+- Create resources
+- Update resources
+- Delete resources
+- Change resource availability
 
-Update resources
-
-Delete resources
-
-Change resource availability
+### User Operations
 
 Authenticated users can:
 
-View resources
+- View resources
+- Search resources
+- Filter resources
+- View resource details
+
+---
+
+# 📋 Resource Reservations
+
+Authenticated users can request campus resources according to the configured reservation rules.
+
+### Features
+
+- Create reservation
+- View reservations
+- View reservation details
+- Update reservation
+- Cancel reservation
+- Delete reservation
+- Admin approval
+- Admin rejection
+- Rejection reason
+- Reservation status
+- Recurring reservations
+- Reservation conflict detection
+
+### Reservation Status
+
+- `pending`
+- `approved`
+- `rejected`
+- `cancelled`
+
+### Recurrence
+
+- `daily`
+- `weekly`
+- `monthly`
+
+### Reservation Workflow
+
+    User
+     │
+     ▼
+    Browse Resources
+     │
+     ▼
+    Select Resource
+     │
+     ▼
+    Choose Date & Time
+     │
+     ▼
+    Enter Reservation Details
+     │
+     ▼
+    Check Existing Reservations
+     │
+     ├───────────────┐
+     │               │
+     ▼               ▼
+    Conflict       No Conflict
+     │               │
+     ▼               ▼
+    Prevent       Create Reservation
+                       │
+                       ▼
+                     Pending
+                       │
+                 ┌─────┴─────┐
+                 ▼           ▼
+              Approved     Rejected
+
+The reservation system checks overlapping reservations for the same resource and time period to help prevent double booking.
+
+---
+
+# 📅 Schedule & Calendar
+
+The application contains schedule and calendar-related functionality.
+
+### Schedule Information
+
+- Title
+- Description
+- Start date
+- End date
+- Location
+- Schedule type
+- Organizer
+- Participants
+- Resources
+- Recurrence
+- Target audience
+- Calendar color
+
+### Schedule Types
+
+- Class
+- Lecture
+- Meeting
+- Exam
+- Workshop
+- Event
+- Other
 
-View resource details
+### Recurrence Options
 
-Filter resources by type
+- None
+- Daily
+- Weekly
+- Biweekly
+- Monthly
 
-📅 Resource Reservations
+The frontend contains calendar and schedule management interfaces.
 
-The reservation module allows authenticated users to request campus resources.
+> **Development Status:** The repository contains multiple schedule-related implementations. The schedule module should be consolidated and completed before production deployment.
 
-Reservation features
+---
 
-Create reservation
+# 💬 Messaging & Real-Time Communication
 
-View own reservations
+The application provides direct and group communication using REST APIs and Socket.IO.
 
-View resource reservations
+### Features
 
-View individual reservation
+- Direct conversations
+- Group conversations
+- Conversation management
+- Send messages
+- Message attachments
+- Read receipts
+- Typing indicators
+- User search
+- Participant management
+- Real-time message delivery
 
-Update reservation
+### Conversation Types
 
-Cancel reservation
+- `direct`
+- `group`
+- `course`
 
-Delete reservation
-
-Admin approval
-
-Admin rejection
-
-Rejection reason
-
-Reservation status
-
-Recurring reservations
-
-Reservation conflict detection
-
-Reservation statuses
-
-pending
-approved
-rejected
-cancelled
-
-Recurrence
-
-daily
-weekly
-monthly
-
-Conflict detection
-
-The Reservation model checks for overlapping reservations for the same resource.
-
-Requested Time
-      │
-      ▼
-Check Existing Reservations
-      │
-      ├── Conflict Found ──► Reject / Prevent Conflict
-      │
-      └── No Conflict ─────► Create Reservation
-
-🗓️ Schedule & Calendar
-
-The frontend contains a dedicated schedule-management interface and calendar functionality.
-
-Schedule model supports
-
-Title
-
-Description
-
-Start date
-
-End date
-
-Location
-
-Type
-
-Organizer
-
-Participants
-
-Resources
-
-Recurrence
-
-Target audience
-
-Calendar color
-
-Schedule types
-
-class
-lecture
-meeting
-exam
-workshop
-event
-other
-
-Recurrence options
-
-none
-daily
-weekly
-biweekly
-monthly
-
-The frontend also provides:
-
-Calendar view
-
-Schedule creation UI
-
-Schedule editing UI
-
-Schedule deletion UI
-
-Filters
-
-Conflict-checking UI
-
-Resource-availability UI
-
-Report-generation UI
-
-Important: The repository contains more than one schedule implementation. The route currently mounted by backend/server.js is schedule.routes.js, whose CRUD handlers are placeholders, while scheduleRoutes.js contains a more developed implementation. Therefore, the schedule module should be considered partially implemented / under development in the current repository state.
-
-💬 Messaging & Communication
-
-The application includes direct and group communication.
-
-Messaging functionality
-
-View conversations
-
-View conversation messages
-
-Direct conversations
-
-Group conversations
-
-Search users by email
-
-Add participants
-
-Send messages
-
-Message attachments
-
-Read receipts
-
-Typing indicators
-
-Conversation rooms
-
-Real-time message delivery
-
-Conversation types
-
-direct
-group
-course
-
-Real-time communication
+### Real-Time Communication
 
 Socket.IO is used for:
 
-User connections
+- User connections
+- Personal rooms
+- Conversation rooms
+- New message events
+- Typing indicators
+- Message read events
+- Conversation read events
+- Real-time notifications
+
+### Messaging Workflow
+
+    User A
+      │
+      ▼
+    Open Conversation
+      │
+      ▼
+    Send Message
+      │
+      ▼
+    Socket.IO
+      │
+      ▼
+    Node.js / Express
+      │
+      ▼
+    MongoDB
+      │
+      ▼
+    Socket.IO
+      │
+      ▼
+    User B
+      │
+      ▼
+    New Message
+
+---
+
+# 🔔 Notifications
+
+The system provides in-application notifications for users.
+
+### Features
 
-Personal rooms
-
-Conversation rooms
-
-New message events
-
-Typing indicators
-
-Message read events
-
-Conversation read events
-
-Message notifications
-
-Messaging workflow
-
-User A
-  │
-  ▼
-Open / Create Conversation
-  │
-  ▼
-Send Message
-  │
-  ▼
-Express / Socket.IO
-  │
-  ▼
-Store Message in MongoDB
-  │
-  ▼
-Emit Real-Time Event
-  │
-  ▼
-User B Receives Message
-
-🔔 Notifications
-
-The notification system provides in-application notifications for authenticated users.
-
-Notification functionality
-
-Get notifications
-
-View notification details
-
-Mark notification as read
-
-Mark all notifications as read
-
-Delete notification
-
-Delete all notifications
-
-Notification priority
-
-Notification links
-
-Related-model references
-
-Notification expiration support
-
-Delivery-status tracking
-
-Notification types
-
-event_invitation
-event_reminder
-schedule_change
-resource_approval
-resource_rejection
-message
-announcement
-system
-other
-
-Priority levels
-
-low
-medium
-high
-
-📊 Administrative Analytics
-
-The admin analytics module provides user and system statistics.
-
-Analytics include
-
-Total users
-
-Active users
-
-Inactive users
-
-Admin count
-
-Lecturer count
-
-Student count
-
-Department distribution
-
-Registration trends
-
-Login activity
-
-Server status
-
-Database connection status
-
-System health information
-
-Login activity
-
-The backend calculates:
-
-Today
-This Week
-This Month
-
-Visualization
-
-The frontend uses:
-
-Chart.js
-
-React Chart.js
-
-Bar charts
-
-Pie charts
-
-Line charts
-
-Doughnut charts
-
-Dashboard statistic cards
-
-📚 Courses
-
-A Courses section exists in the frontend, including:
-
-Courses page
-
-Course details page
-
-Course route
-
-Course-related UI structure
-
-However, the current implementation explicitly marks the Courses module as under development and uses placeholder/mock behavior rather than a completed course API.
-
-Therefore:
-
-Courses are not claimed as a completed backend feature in this README.
-
-👤 Profile Management
-
-Authenticated users can access the profile page and update their own profile.
-
-The backend provides:
-
-PUT /api/users/profile
-
-Administrators additionally have access to user-management operations.
-
-🛠️ Technology Stack
-
-Frontend
-
-Technology
-
-Purpose
-
-React 18
-
-Frontend UI
-
-React Router
-
-Client-side routing
-
-Redux Toolkit
-
-State management
-
-React Redux
-
-Redux integration
-
-Material UI
-
-UI components
-
-MUI Data Grid
-
-Data tables
-
-FullCalendar
-
-Calendar functionality
-
-React Big Calendar
-
-Calendar interface
-
-Axios
-
-HTTP requests
-
-Chart.js
-
-Data visualization
-
-React Chart.js
-
-Chart integration
-
-Formik
-
-Form handling
-
-Yup
-
-Validation
-
-Framer Motion
-
-UI animations
-
-React Icons
-
-Icons
-
-React Toastify
-
-Notifications/toasts
-
-React Hot Toast
-
-Toast notifications
-
-Socket.IO Client
-
-Real-time communication
-
-date-fns
-
-Date handling
-
-jwt-decode
-
-JWT decoding
-
-Backend
-
-Technology
-
-Purpose
-
-Node.js
-
-Runtime
-
-Express.js
-
-REST API
-
-MongoDB
-
-Database
-
-Mongoose
-
-MongoDB ODM
-
-Socket.IO
-
-Real-time communication
-
-JWT
-
-Authentication
-
-bcrypt / bcryptjs
-
-Password hashing
-
-Nodemailer
-
-Email
-
-Multer
-
-File uploads
-
-Express Validator
-
-Validation
-
-Helmet
-
-HTTP security headers
-
-Express Rate Limit
-
-Rate limiting
-
-CORS
-
-Cross-origin requests
-
-Morgan
-
-Development logging
-
-Winston
-
-Application logging
-
-Node Cron
-
-Scheduled tasks
-
-Cookie Parser
-
-Cookie handling
-
-dotenv
-
-Environment configuration
-
-Development / Testing
-
-Nodemon
-
-Jest
-
-Supertest
-
-Concurrently
-
-🏗️ System Architecture
-
-                         ┌─────────────────────┐
-                         │        USERS        │
-                         │                     │
-                         │ Admin / Lecturer /  │
-                         │ Student             │
-                         └──────────┬──────────┘
-                                    │
-                                    ▼
-                         ┌─────────────────────┐
-                         │   React Frontend    │
-                         │                     │
-                         │ React Router        │
-                         │ Redux Toolkit       │
-                         │ Material UI         │
-                         │ Calendar            │
-                         │ Chart.js            │
-                         └──────────┬──────────┘
-                                    │
-                              HTTP / REST
-                                    │
-                                    ▼
-                         ┌─────────────────────┐
-                         │ Node.js + Express   │
-                         │                     │
-                         │ Routes              │
-                         │ Controllers         │
-                         │ Middleware          │
-                         │ Authentication      │
-                         │ Authorization       │
-                         └──────────┬──────────┘
-                                    │
-                     ┌──────────────┴──────────────┐
-                     │                             │
-                     ▼                             ▼
-            ┌─────────────────┐          ┌─────────────────┐
-            │     MongoDB     │          │    Socket.IO    │
-            │                 │          │                 │
-            │ Users           │          │ Real-time       │
-            │ Events          │          │ Messaging       │
-            │ Resources       │          │ Notifications   │
-            │ Reservations    │          │ Typing          │
-            │ Messages        │          │ Read Receipts   │
-            │ Notifications   │          └─────────────────┘
-            │ Schedules       │
-            └─────────────────┘
-
-📁 Project Structure
-
-smart-campus-management-IIITV-/
-│
-├── backend/
-│   ├── backups/
-│   ├── config/
-│   │   └── db.js
-│   │
-│   ├── controllers/
-│   │   ├── auth.controller.js
-│   │   ├── event.controller.js
-│   │   ├── eventController.js
-│   │   ├── events.controller.js
-│   │   ├── message.controller.js
-│   │   ├── reservations.controller.js
-│   │   ├── resources.controller.js
-│   │   ├── scheduleController.js
-│   │   └── user.controller.js
-│   │
-│   ├── middleware/
-│   │   ├── async.js
-│   │   ├── auth.js
-│   │   └── error.js
-│   │
-│   ├── models/
-│   │   ├── Analytics.js
-│   │   ├── Conversation.js
-│   │   ├── Event.js
-│   │   ├── Message.js
-│   │   ├── Notification.js
-│   │   ├── Registration.js
-│   │   ├── Reservation.js
-│   │   ├── Resource.js
-│   │   ├── Schedule.js
-│   │   └── User.js
-│   │
-│   ├── public/
-│   │   ├── favicon.ico
-│   │   ├── index.html
-│   │   └── test.html
-│   │
-│   ├── routes/
-│   │   ├── analytics.routes.js
-│   │   ├── auth.routes.js
-│   │   ├── events.routes.js
-│   │   ├── message.routes.js
-│   │   ├── notification.routes.js
-│   │   ├── reservations.js
-│   │   ├── resource.routes.js
-│   │   ├── schedule.routes.js
-│   │   ├── scheduleRoutes.js
-│   │   ├── user.routes.js
-│   │   ├── users.js
-│   │   └── users.routes.js
-│   │
-│   ├── scripts/
-│   │   ├── README.md
-│   │   └── migrate-data.js
-│   │
-│   ├── utils/
-│   │   ├── asyncHandler.js
-│   │   ├── errorResponse.js
-│   │   ├── notifications.js
-│   │   ├── schedulers.js
-│   │   └── sendEmail.js
-│   │
-│   ├── .env.example
-│   ├── check-registrations.js
-│   ├── package.json
-│   ├── server.js
-│   └── start.js
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── app/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── features/
-│   │   ├── hooks/
-│   │   ├── pages/
-│   │   │   ├── admin/
-│   │   │   ├── auth/
-│   │   │   ├── courses/
-│   │   │   ├── dashboard/
-│   │   │   ├── errors/
-│   │   │   ├── events/
-│   │   │   ├── messages/
-│   │   │   ├── notifications/
-│   │   │   ├── resources/
-│   │   │   └── users/
-│   │   ├── routes/
-│   │   ├── selectors/
-│   │   ├── services/
-│   │   ├── slices/
-│   │   ├── store/
-│   │   ├── styles/
-│   │   ├── utils/
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── index.css
-│   │
-│   ├── package.json
-│   └── package-lock.json
-│
-├── src/
-├── export-data.js
-├── import-data.js
-├── migrate.js
-├── migrate.bat
-├── migrate-to-atlas.bat
-├── package.json
-├── package-lock.json
-└── README.md
-
-🗃️ Database Models
-
-The backend defines the following main Mongoose models.
-
-User
+- Retrieve notifications
+- View notification details
+- Mark notification as read
+- Mark all notifications as read
+- Delete notification
+- Delete all notifications
+- Notification priority
+- Notification links
+- Related model references
+- Notification expiration
+- Delivery status tracking
+
+### Notification Types
+
+- `event_invitation`
+- `event_reminder`
+- `schedule_change`
+- `resource_approval`
+- `resource_rejection`
+- `message`
+- `announcement`
+- `system`
+- `other`
+
+### Priority Levels
+
+- `low`
+- `medium`
+- `high`
+
+---
+
+# 📊 Administrative Analytics
+
+The application contains an analytics module for administrative dashboards.
+
+### Analytics Include
+
+- Total users
+- Active users
+- Inactive users
+- Student count
+- Lecturer count
+- Admin count
+- Department distribution
+- Registration statistics
+- Login activity
+- Server status
+- Database connection status
+- System health information
+
+### Login Activity
+
+Statistics can be viewed for:
+
+- Today
+- This Week
+- This Month
+
+### Visualization
+
+The frontend uses Chart.js and React Chart.js for:
+
+- Bar charts
+- Pie charts
+- Line charts
+- Doughnut charts
+- Dashboard statistic cards
+
+---
+
+# 📚 Courses
+
+The project contains a Courses section in the frontend.
+
+Current components include:
+
+- Courses page
+- Course details page
+- Course routing
+- Course-related UI structure
+
+> **Current Status:** The Courses module is still under development and contains placeholder/mock behavior. It should not be considered a fully implemented backend course-management module.
+
+---
+
+# 👤 Profile Management
+
+Authenticated users can access and update their profile information.
+
+The backend provides profile update functionality through the user API.
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
+- React 18
+- React Router
+- Redux Toolkit
+- React Redux
+- Material UI
+- MUI Data Grid
+- FullCalendar
+- React Big Calendar
+- Axios
+- Chart.js
+- React Chart.js
+- Formik
+- Yup
+- Framer Motion
+- React Icons
+- React Toastify
+- React Hot Toast
+- Socket.IO Client
+- date-fns
+- jwt-decode
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Socket.IO
+- JWT
+- bcrypt / bcryptjs
+- Nodemailer
+- Multer
+- Express Validator
+- Helmet
+- Express Rate Limit
+- CORS
+- Morgan
+- Winston
+- Node Cron
+- Cookie Parser
+- dotenv
+
+## Testing & Development
+
+- Jest
+- Supertest
+- Nodemon
+- Concurrently
+- Git
+- GitHub
+
+---
+
+# 🏗️ System Architecture
+
+    ┌─────────────────────────────────────────────┐
+    │                    USERS                    │
+    │                                             │
+    │        Admin / Lecturer / Student           │
+    └──────────────────────┬──────────────────────┘
+                           │
+                           ▼
+    ┌─────────────────────────────────────────────┐
+    │              REACT FRONTEND                │
+    │                                             │
+    │ React Router • Redux Toolkit • Material UI │
+    │ Calendar • Charts • Axios                  │
+    └──────────────────────┬──────────────────────┘
+                           │
+                      HTTP / REST
+                           │
+                           ▼
+    ┌─────────────────────────────────────────────┐
+    │             NODE.JS + EXPRESS              │
+    │                                             │
+    │ Routes • Controllers • Middleware          │
+    │ Authentication • Authorization             │
+    └───────────────┬─────────────────┬───────────┘
+                    │                 │
+                    ▼                 ▼
+    ┌────────────────────────┐   ┌─────────────────────┐
+    │        MONGODB         │   │      SOCKET.IO      │
+    │                        │   │                     │
+    │ Users                  │   │ Real-Time Messaging │
+    │ Events                 │   │ Notifications       │
+    │ Resources              │   │ Typing Indicators   │
+    │ Reservations           │   │ Read Receipts       │
+    │ Messages               │   │                     │
+    │ Notifications          │   │                     │
+    │ Schedules              │   │                     │
+    └────────────────────────┘   └─────────────────────┘
+
+---
+
+# 📁 Project Structure
+
+    smart-campus-management-IIITV-/
+    │
+    ├── backend/
+    │   ├── backups/
+    │   ├── config/
+    │   ├── controllers/
+    │   ├── middleware/
+    │   ├── models/
+    │   ├── public/
+    │   ├── routes/
+    │   ├── scripts/
+    │   ├── utils/
+    │   ├── .env.example
+    │   ├── check-registrations.js
+    │   ├── package.json
+    │   ├── server.js
+    │   └── start.js
+    │
+    ├── frontend/
+    │   ├── public/
+    │   ├── src/
+    │   │   ├── app/
+    │   │   ├── components/
+    │   │   ├── context/
+    │   │   ├── features/
+    │   │   ├── hooks/
+    │   │   ├── pages/
+    │   │   │   ├── admin/
+    │   │   │   ├── auth/
+    │   │   │   ├── courses/
+    │   │   │   ├── dashboard/
+    │   │   │   ├── errors/
+    │   │   │   ├── events/
+    │   │   │   ├── messages/
+    │   │   │   ├── notifications/
+    │   │   │   ├── resources/
+    │   │   │   └── users/
+    │   │   ├── routes/
+    │   │   ├── selectors/
+    │   │   ├── services/
+    │   │   ├── slices/
+    │   │   ├── store/
+    │   │   ├── styles/
+    │   │   └── utils/
+    │   │
+    │   ├── package.json
+    │   └── package-lock.json
+    │
+    ├── src/
+    ├── export-data.js
+    ├── import-data.js
+    ├── migrate.js
+    ├── migrate.bat
+    ├── migrate-to-atlas.bat
+    ├── package.json
+    ├── package-lock.json
+    └── README.md
+
+---
+
+# 🗃️ Database Models
+
+The backend uses Mongoose models for persistent application data.
+
+### Main Models
+
+- User
+- Analytics
+- Conversation
+- Event
+- Message
+- Notification
+- Registration
+- Reservation
+- Resource
+- Schedule
+
+## User
 
 Stores:
 
-First name
+- First name
+- Last name
+- Email
+- Password
+- Role
+- Main department
+- Sub-department
+- Status
+- Last login
+- Password reset information
+- Timestamps
 
-Last name
-
-Email
-
-Role
-
-Password
-
-Main department
-
-Sub-department
-
-Status
-
-Last login
-
-Password-reset information
-
-Creation timestamp
-
-Event
+## Event
 
 Stores:
 
-Title
+- Title
+- Description
+- Start date
+- End date
+- Venue
+- Organizer
+- Department
+- Category
+- Target audience
+- Capacity
+- Attendees
+- Poster
+- Featured status
+- Event status
+- Creator
+- Timestamps
 
-Description
-
-Start date
-
-End date
-
-Venue
-
-Organizer
-
-Department
-
-Category
-
-Target audience
-
-Capacity
-
-Attendees
-
-Poster
-
-Featured status
-
-Event status
-
-Creator
-
-Timestamps
-
-Registration
+## Registration
 
 Stores:
 
-User
+- User
+- Event
+- Registration date
+- Check-in status
+- Check-in time
+- Attendance status
 
-Event
+Attendance states include:
 
-Registration date
+- `registered`
+- `attended`
+- `no-show`
 
-Check-in status
-
-Check-in time
-
-Attendance status
-
-Attendance states:
-
-registered
-attended
-no-show
-
-A unique index prevents a user from registering for the same event more than once.
-
-Resource
+## Resource
 
 Stores:
 
-Resource name
+- Resource name
+- Resource type
+- Location
+- Building
+- Floor
+- Room
+- Capacity
+- Description
+- Features
+- Availability
+- Maintenance information
+- Images
+- Approval requirement
+- Allowed roles
+- Creator
 
-Type
-
-Location
-
-Capacity
-
-Description
-
-Features
-
-Availability
-
-Maintenance schedule
-
-Images
-
-Approval requirement
-
-Allowed roles
-
-Creator
-
-Creation date
-
-Reservation
+## Reservation
 
 Stores:
 
-Resource
+- Resource
+- User
+- Title
+- Purpose
+- Start time
+- End time
+- Attendee count
+- Status
+- Approver
+- Approval date
+- Rejection reason
+- Recurrence information
+- Creation date
 
-User
-
-Title
-
-Purpose
-
-Start time
-
-End time
-
-Attendee count
-
-Status
-
-Approver
-
-Approval date
-
-Rejection reason
-
-Recurrence information
-
-Creation date
-
-Schedule
+## Schedule
 
 Stores:
 
-Title
+- Title
+- Description
+- Start date
+- End date
+- Location
+- Type
+- Organizer
+- Participants
+- Resources
+- Recurrence
+- Target audience
+- Calendar color
 
-Description
-
-Start date
-
-End date
-
-Location
-
-Type
-
-Organizer
-
-Participants
-
-Resources
-
-Recurrence
-
-Target audience
-
-Calendar color
-
-Message
+## Message
 
 Stores:
 
-Sender
+- Sender
+- Recipient
+- Conversation
+- Content
+- Attachments
+- Read information
+- System message information
+- Timestamps
 
-Recipient
-
-Conversation
-
-Content
-
-Attachments
-
-Read-by information
-
-System-message flag
-
-Timestamps
-
-Conversation
+## Conversation
 
 Supports:
 
-direct
-group
-course
-
-and stores:
-
-Participants
-
-Participant roles
-
-Course reference
-
-Avatar
-
-Archive state
-
-Last message
-
-Last-message timestamp
-
-Creator
-
-Timestamps
-
-Notification
+- `direct`
+- `group`
+- `course`
 
 Stores:
 
-Recipient
+- Participants
+- Participant roles
+- Course reference
+- Avatar
+- Archive state
+- Last message
+- Last-message timestamp
+- Creator
+- Timestamps
 
-Sender
+## Notification
 
-Notification type
+Stores:
 
-Title
+- Recipient
+- Sender
+- Notification type
+- Title
+- Content
+- Read status
+- Priority
+- Link
+- Related model
+- Related record
+- Delivery status
+- Expiration
+- Timestamps
 
-Content
+## Analytics
 
-Read state
+Provides analytics-related aggregation and statistical data.
 
-Priority
+---
 
-Link
+# 🔌 API Modules
 
-Related model
+The backend is organized into REST API modules.
 
-Related record
+    /api/auth
+    /api/users
+    /api/schedules
+    /api/resources
+    /api/analytics
+    /api/events
+    /api/messages
+    /api/notifications
+    /api/reservations
 
-Delivery status
+### Authentication
 
-Expiration
+    /api/auth
 
-Creation date
+### Users
 
-Analytics
+    /api/users
 
-Provides aggregation support for:
+### Events
 
-Types
+    /api/events
 
-Categories
+### Resources
 
-Actions
+    /api/resources
 
-Counts
+### Reservations
 
-Total values
+    /api/reservations
 
-Time-series data
+### Schedules
 
-🔌 API Modules
+    /api/schedules
 
-The backend mounts the following primary API modules:
+### Messages
 
-/api/auth
-/api/users
-/api/schedules
-/api/resources
-/api/analytics
-/api/events
-/api/messages
-/api/notifications
-/api/reservations
+    /api/messages
 
-Authentication
+### Notifications
 
-/api/auth
+    /api/notifications
 
-Users
+### Analytics
 
-/api/users
+    /api/analytics
 
-Schedules
+---
 
-/api/schedules
-
-Resources
-
-/api/resources
-
-Analytics
-
-/api/analytics
-
-Events
-
-/api/events
-
-Messages
-
-/api/messages
-
-Notifications
-
-/api/notifications
-
-Reservations
-
-/api/reservations
-
-🩺 Health Check
+# 🩺 Health Check
 
 The backend provides:
 
-GET /health
+    GET /health
 
 Example response:
 
-{
-  "success": true,
-  "message": "Server is running",
-  "timestamp": "..."
-}
+    {
+      "success": true,
+      "message": "Server is running"
+    }
 
-⚙️ Requirements
+---
 
-Install the following before running the project:
+# ⚙️ Requirements
 
-Node.js 14+
+Before running the project, install:
 
-npm
+- Node.js 14+
+- npm
+- MongoDB
+- Git
+- Modern web browser
 
-MongoDB
+A current Node.js LTS release is recommended for development.
 
-Git
+---
 
-Modern web browser
+# 🚀 Installation
 
-For development, a current Node.js LTS release is recommended.
+## 1. Clone the Repository
 
-🚀 Installation
-
-1. Clone the Repository
-
-git clone https://github.com/UJumesh/smart-campus-management-IIITV-.git
+    git clone https://github.com/UJumesh/smart-campus-management-IIITV-.git
 
 Navigate into the project:
 
-cd smart-campus-management-IIITV-
+    cd smart-campus-management-IIITV-
 
-2. Install All Dependencies
+---
 
-The root package.json provides an installation helper:
+## 2. Install Dependencies
 
-npm run install-all
+From the root directory:
 
-This installs:
+    npm run install-all
 
-Root dependencies
-       ↓
-Backend dependencies
-       ↓
-Frontend dependencies
+Or install dependencies separately.
 
-Alternatively:
+### Root
 
-Root
+    npm install
 
-npm install
+### Backend
 
-Backend
+    cd backend
+    npm install
 
-cd backend
-npm install
+### Frontend
 
-Frontend
+    cd ../frontend
+    npm install
 
-cd ../frontend
-npm install
+---
 
-🔐 Environment Configuration
+# 🗄️ MongoDB Setup
 
-Create a file:
+The application uses MongoDB.
 
-backend/.env
+For local development:
 
-Use backend/.env.example as the template.
+    mongodb://localhost:27017/smart-campus
 
-Example:
+Make sure MongoDB is running before starting the backend.
 
-NODE_ENV=development
-PORT=5001
+MongoDB will create the database when application data is first written.
 
-MONGO_URI=mongodb://localhost:27017/smart-campus
+---
 
-JWT_SECRET=replace_with_a_secure_secret
-JWT_EXPIRE=30d
-JWT_COOKIE_EXPIRE=30
+# 🔐 Environment Configuration
 
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=your_email@gmail.com
-SMTP_PASSWORD=your_app_password
+Create:
 
-FROM_NAME=Smart Campus
-FROM_EMAIL=noreply@smartcampus.com
+    backend/.env
 
-FRONTEND_URL=http://localhost:3000
+Use:
 
-Important
+    backend/.env.example
 
-Never commit real:
+as the reference.
 
-JWT secrets
+Example environment configuration:
 
-SMTP passwords
+    NODE_ENV=development
+    PORT=5001
 
-API keys
+    MONGO_URI=mongodb://localhost:27017/smart-campus
 
-Database credentials
+    JWT_SECRET=your_secure_jwt_secret
+    JWT_EXPIRE=30d
+    JWT_COOKIE_EXPIRE=30
 
-to GitHub.
+    SMTP_HOST=smtp.gmail.com
+    SMTP_PORT=587
+    SMTP_SECURE=false
+    SMTP_USER=your_email@gmail.com
+    SMTP_PASSWORD=your_app_password
 
-🗄️ MongoDB Setup
+    FROM_NAME=Smart Campus
+    FROM_EMAIL=noreply@smartcampus.com
 
-The default development database URI is:
+    FRONTEND_URL=http://localhost:3000
 
-mongodb://localhost:27017/smart-campus
+### Important
 
-Start MongoDB locally and ensure the database server is available before starting the backend.
+Never commit the real `.env` file or credentials to GitHub.
 
-MongoDB will create the smart-campus database when application data is written.
+---
 
-▶️ Running the Application
+# ▶️ Running the Application
 
-Option 1 — Run Frontend and Backend Together
+## Run Frontend and Backend Together
 
 From the project root:
 
-npm run dev
+    npm run dev
 
-The root script starts:
+The project uses Concurrently to run the frontend and backend during development.
 
-Backend
-Frontend
+### Backend
 
-concurrently.
+    http://localhost:5001
 
-Option 2 — Run Backend Separately
+### Frontend
 
-cd backend
-npm run dev
+    http://localhost:3000
 
-The backend prefers:
+---
 
-http://localhost:5001
+## Run Backend Separately
 
-If the preferred port is already occupied, the server attempts to find another available port.
+    cd backend
+    npm run dev
 
-Option 3 — Run Frontend Separately
+---
+
+## Run Frontend Separately
 
 Open another terminal:
 
-cd frontend
-npm start
+    cd frontend
+    npm start
 
-The React development server normally runs at:
+Then open:
 
-http://localhost:3000
+    http://localhost:3000
 
-🌐 Frontend API Configuration
+---
 
-The frontend Axios client supports:
+# 🌐 Frontend API Configuration
 
-REACT_APP_API_URL
+The frontend supports:
 
-For local development, set:
+    REACT_APP_API_URL=http://localhost:5001
 
-REACT_APP_API_URL=http://localhost:5001
+For local development, make sure the frontend API URL matches the backend port.
 
-This is recommended because the backend's default development port is 5001.
+---
 
-The frontend package also contains a development proxy targeting port 5001.
+# 🔄 Application Workflow
 
-🔄 Application Flow
+    USER
+      │
+      ▼
+    Login / Register
+      │
+      ▼
+    JWT Authentication
+      │
+      ▼
+    Role Identification
+      │
+      ├──────────────────┬──────────────────┐
+      │                  │                  │
+      ▼                  ▼                  ▼
+    ADMIN             LECTURER           STUDENT
+      │                  │                  │
+      └──────────────────┼──────────────────┘
+                         │
+                         ▼
+                     DASHBOARD
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+          ▼              ▼              ▼
+        Events       Resources       Schedule
+          │              │              │
+          ▼              ▼              ▼
+     Registration   Reservation      Calendar
+          │              │
+          └───────┬──────┘
+                  ▼
+             Notifications
+                  │
+                  ▼
+             Communication
+                  │
+                  ▼
+               Analytics
 
-                         USER
-                           │
-                           ▼
-                    Login / Register
-                           │
-                           ▼
-                    JWT Authentication
-                           │
-                           ▼
-                    Role Identification
-                           │
-          ┌────────────────┼────────────────┐
-          │                │                │
-          ▼                ▼                ▼
-        ADMIN           LECTURER         STUDENT
-          │                │                │
-          └────────────────┼────────────────┘
-                           │
-                           ▼
-                       DASHBOARD
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-        ▼                  ▼                  ▼
-      Events           Resources          Schedule
-        │                  │                  │
-        ▼                  ▼                  ▼
-   Registration       Reservation         Calendar
-        │                  │
-        └──────────┬───────┘
-                   ▼
-              Notifications
-                   │
-                   ▼
-              Communication
-                   │
-                   ▼
-                Analytics
+---
 
-🎟️ Event Registration Workflow
+# 🎟️ Event Registration Workflow
 
-User
- │
- ▼
-View Events
- │
- ▼
-Open Event Details
- │
- ▼
-Check Capacity
- │
- ▼
-Register
- │
- ▼
-Registration Stored
- │
- ▼
-Attend Event
- │
- ▼
-Admin / Lecturer Check-in
- │
- ▼
-Attendance Status
+    User
+     ↓
+    View Events
+     ↓
+    Open Event Details
+     ↓
+    Check Capacity
+     ↓
+    Register
+     ↓
+    Registration Stored
+     ↓
+    Attend Event
+     ↓
+    Admin / Lecturer Check-in
+     ↓
+    Attendance Status
 
-🏢 Resource Reservation Workflow
+---
 
-User
- │
- ▼
-Browse Resources
- │
- ▼
-Select Resource
- │
- ▼
-Choose Date & Time
- │
- ▼
-Enter Purpose & Attendees
- │
- ▼
-Check Reservation Conflict
- │
- ├── Conflict ──► Prevent / Reject
- │
- └── No Conflict
-          │
-          ▼
-     Create Reservation
-          │
-          ▼
-       Pending
-          │
-     ┌────┴────┐
-     ▼         ▼
- Approved    Rejected
+# 🏢 Resource Reservation Workflow
 
-💬 Real-Time Messaging Workflow
+    User
+     ↓
+    Browse Resources
+     ↓
+    Select Resource
+     ↓
+    Choose Date & Time
+     ↓
+    Enter Purpose & Attendees
+     ↓
+    Check Reservation Conflict
+     ↓
+    Create Reservation
+     ↓
+    Pending
+     ↓
+    ┌───────────┐
+    │           │
+    ▼           ▼
+    Approved   Rejected
 
-User A
- │
- ▼
-Conversation
- │
- ▼
-Send Message
- │
- ▼
-Socket.IO
- │
- ├──────────────► MongoDB
- │
- ▼
-Conversation Room
- │
- ▼
-User B
- │
- ▼
-New Message
+---
 
-Socket.IO also supports:
+# 💬 Messaging Workflow
 
-Typing indicators
+    User A
+      │
+      ▼
+    Conversation
+      │
+      ▼
+    Send Message
+      │
+      ▼
+    Socket.IO
+      │
+      ▼
+    Node.js / Express
+      │
+      ▼
+    MongoDB
+      │
+      ▼
+    Socket.IO
+      │
+      ▼
+    User B
 
-Read receipts
+---
 
-Conversation rooms
+# 🔒 Security
 
-Personal notification rooms
+The application includes:
 
-🔒 Security
+- JWT authentication
+- Protected routes
+- Role-based authorization
+- bcrypt password hashing
+- Helmet security middleware
+- CORS
+- Express rate limiting
+- Express Validator
+- Environment variables
+- Authentication middleware
+- Password reset functionality
+- HTTP security headers
 
-The repository includes multiple security mechanisms.
+### Production Security Recommendations
 
-Authentication & authorization
+Before production deployment, additionally configure and review:
 
-JWT authentication
+- HTTPS
+- Secure cookies
+- Strong JWT secrets
+- Strict CORS policies
+- Input sanitization
+- CSRF protection where applicable
+- MongoDB authentication
+- Secure SMTP credentials
+- Secret management
+- Audit logging
+- Security testing
+- Dependency vulnerability scanning
 
-Protected routes
+---
 
-Role-based authorization
-
-Password hashing with bcrypt
-
-Token refresh
-
-Password reset flow
-
-HTTP/API security
-
-Helmet
-
-CORS
-
-Express rate limiting
-
-Express Validator
-
-Cookie Parser
-
-Environment-based configuration
-
-Production recommendations
-
-Before production deployment, additionally implement/review:
-
-HTTPS
-
-Secure cookies
-
-Strict CORS configuration
-
-Strong JWT secrets
-
-Input sanitization
-
-CSRF protection where applicable
-
-MongoDB authentication and network restrictions
-
-Secure SMTP credentials
-
-Secret management
-
-Audit logging
-
-Security testing
-
-Dependency vulnerability scanning
-
-🧪 Testing
+# 🧪 Testing
 
 The backend includes Jest and Supertest dependencies.
 
-Run:
+Run backend tests:
 
-cd backend
-npm test
+    cd backend
+    npm test
 
-The frontend uses the Create React App testing setup.
+Frontend tests can be started using:
 
-Run:
+    cd frontend
+    npm test
 
-cd frontend
-npm test
+Testing coverage should be expanded as development continues.
 
-The repository should be considered a development/academic project; test coverage is not presented here as complete.
+---
 
-🏗️ Production Build
+# 🏗️ Production Build
 
-Build the React frontend:
+Build the frontend:
 
-cd frontend
-npm run build
+    cd frontend
+    npm run build
 
 Or from the project root:
 
-npm run build
+    npm run build
 
 The production frontend build is generated in:
 
-frontend/build/
+    frontend/build/
 
-📸 Screenshots
+---
 
-Create a folder such as:
+# 📸 Screenshots
 
-screenshots/
-├── login.png
-├── register.png
-├── dashboard.png
-├── events.png
-├── event-details.png
-├── resources.png
-├── resource-details.png
-├── reservation.png
-├── schedule.png
-├── calendar.png
-├── messages.png
-├── notifications.png
-├── user-management.png
-└── analytics.png
+Add a `screenshots` directory to the repository:
 
-Then add them to this section.
+    screenshots/
+    ├── login.png
+    ├── register.png
+    ├── dashboard.png
+    ├── events.png
+    ├── event-details.png
+    ├── resources.png
+    ├── resource-details.png
+    ├── reservation.png
+    ├── schedule.png
+    ├── calendar.png
+    ├── messages.png
+    ├── notifications.png
+    ├── user-management.png
+    └── analytics.png
 
-Login
+Then add screenshots to this README using standard Markdown image syntax.
 
-![Login](screenshots/login.png)
+---
 
-Dashboard
+# 📋 Current Implementation Status
 
-![Dashboard](screenshots/dashboard.png)
+| Module | Status |
+|--------|--------|
+| Authentication | ✅ Implemented |
+| JWT Authorization | ✅ Implemented |
+| Role-Based Access | ✅ Implemented |
+| User Management | ✅ Implemented |
+| Profile Management | ✅ Implemented |
+| Event Management | ✅ Implemented |
+| Event Registration | ✅ Implemented |
+| Event Check-in | ✅ Implemented |
+| Resource Management | ✅ Implemented |
+| Resource Reservations | ✅ Implemented |
+| Reservation Approval | ✅ Implemented |
+| Reservation Conflict Detection | ✅ Implemented |
+| Messaging | ✅ Implemented |
+| Socket.IO Communication | ✅ Implemented |
+| Notifications | ✅ Implemented |
+| Admin Analytics | ✅ Implemented |
+| Calendar UI | ✅ Implemented |
+| Schedule | ⚠️ Under Development |
+| Courses | 🚧 Under Development |
+| Production Deployment | 🚧 Requires Configuration |
 
-Events
+---
 
-![Events](screenshots/events.png)
+# ⚠️ Development Notes
 
-Resources
+The project is currently under active development.
 
-![Resources](screenshots/resources.png)
+Some areas contain placeholder or duplicate implementations that should be cleaned up before production deployment.
 
-Analytics
+### Schedule
 
-![Analytics](screenshots/analytics.png)
+The repository contains multiple schedule-related implementations. These should eventually be consolidated into a single clean API implementation.
 
-Screenshots are intentionally not embedded here because the uploaded repository does not contain a dedicated screenshot gallery.
+### Courses
 
-📋 Current Implementation Status
+The Courses frontend exists, but the module is currently under development and does not represent a fully completed course-management backend.
 
-Module
+### API Configuration
 
-Status
+The backend development environment uses port `5001`.
 
-Authentication
+Make sure the frontend API configuration points to the correct backend port.
 
-✅ Implemented
+### Development Data
 
-JWT authorization
+Some development/demo data and fallback behavior are present in the repository.
 
-✅ Implemented
+Production deployments should use properly configured database records and environment variables.
 
-Role-based access
+---
 
-✅ Implemented
+# 🚀 Future Improvements
 
-User management
+## Academic Management
 
-✅ Implemented
+- Complete course management
+- Course enrollment
+- Faculty-course mapping
+- Assignment management
+- Examination management
+- Results and grades
+- Complete attendance management
 
-Profile management
+## Campus Services
 
-✅ Implemented
+- Library management
+- Hostel management
+- Fee management
+- Complaint management
+- Transport management
+- Campus navigation
+- Lost and found
 
-Event management
+## Communication
 
-✅ Implemented
+- Push notifications
+- Email notifications
+- SMS notifications
+- Advanced group communication
+- File/document sharing
 
-Event registration
+## Analytics
 
-✅ Implemented
+- Advanced campus analytics
+- Resource utilization analysis
+- Event participation analytics
+- Predictive resource demand
+- AI-powered campus assistant
 
-Event attendee/check-in support
+## Infrastructure
 
-✅ Implemented
+- Docker support
+- CI/CD pipeline
+- Cloud deployment
+- MongoDB Atlas
+- Automated backups
+- Monitoring
+- Centralized logging
 
-Resource management
+## Security
 
-✅ Implemented
+- Two-factor authentication
+- OTP verification
+- Advanced permission management
+- Security auditing
+- Automated vulnerability scanning
 
-Resource reservation
+---
 
-✅ Implemented
+# 🤝 Contribution
 
-Reservation approval/rejection
+Contributions and suggestions are welcome.
 
-✅ Implemented
+## Create a Feature Branch
 
-Reservation conflict detection
+    git checkout -b feature/your-feature
 
-✅ Implemented
+## Make Your Changes
 
-Messaging
+Implement and test your changes locally.
 
-✅ Implemented
+## Stage Changes
 
-Socket.IO communication
+    git add .
 
-✅ Implemented
+## Commit Changes
 
-Notifications
+    git commit -m "Add your feature"
 
-✅ Implemented
+## Push Changes
 
-Admin analytics
+    git push origin feature/your-feature
 
-✅ Implemented
+## Pull Request
 
-Calendar UI
+Create a Pull Request describing your changes.
 
-✅ Implemented
+---
 
-Schedule backend
+# 🔄 Git Workflow
 
-⚠️ Partially implemented
+Check repository status:
 
-Attendance API
+    git status
 
-⚠️ Placeholder behavior
+Pull the latest changes:
 
-Courses
+    git pull
 
-🚧 Under development
+Add changes:
 
-Production deployment
+    git add .
 
-🚧 Requires deployment configuration
+Commit:
 
-Automated test coverage
+    git commit -m "Update Smart Campus Management System"
 
-🚧 Not presented as complete
+Push:
 
-⚠️ Known Development Notes
+    git push
 
-The repository is actively evolving and contains some legacy/duplicate implementations.
+---
 
-1. Schedule implementations
+# 📌 Project Information
 
-There are multiple schedule-related route/controller files.
+| Property | Details |
+|----------|---------|
+| Project | Smart Campus Management System |
+| Type | Full-Stack Web Application |
+| Architecture | MERN |
+| Frontend | React 18 |
+| Backend | Node.js + Express |
+| Database | MongoDB |
+| ODM | Mongoose |
+| Authentication | JWT |
+| Password Hashing | bcrypt |
+| Real-Time Communication | Socket.IO |
+| State Management | Redux Toolkit |
+| UI Framework | Material UI |
+| Calendar | FullCalendar / React Big Calendar |
+| Charts | Chart.js |
+| Roles | Admin / Lecturer / Student |
+| Status | Active Development |
 
-The server currently mounts:
+---
 
-backend/routes/schedule.routes.js
+# 📊 Technology Highlights
 
-That file contains placeholder CRUD handlers.
+### Frontend
 
-A more developed implementation also exists in:
+React, Redux Toolkit, Material UI, React Router, Axios, FullCalendar, React Big Calendar, Chart.js, Formik, Yup and Socket.IO Client.
 
-backend/routes/scheduleRoutes.js
+### Backend
 
-This should be consolidated before production deployment.
+Node.js, Express.js, MongoDB, Mongoose, JWT, bcrypt, Socket.IO, Nodemailer, Multer, Express Validator, Helmet and Express Rate Limit.
 
-2. Courses module
+### Development & Testing
 
-The frontend Courses pages explicitly use placeholder behavior and display a "Coming Soon" state.
+Jest, Supertest, Nodemon, Concurrently, Git and GitHub.
 
-The course backend/API is therefore not documented as a completed feature.
+---
 
-3. Frontend API port
+# 🧩 Key Technical Highlights
 
-The backend defaults to:
+### 1. JWT Authentication
 
-5001
+Secure authentication is implemented using JSON Web Tokens.
 
-The frontend Axios service has a fallback of:
+### 2. Role-Based Authorization
 
-5002
+Different users receive different access permissions based on their roles.
 
-For local development, explicitly configure:
+### 3. MongoDB Data Layer
 
-REACT_APP_API_URL=http://localhost:5001
+Mongoose models are used to organize persistent campus data.
 
-to keep frontend API requests aligned with the backend.
+### 4. Reservation Conflict Detection
 
-4. Legacy files
+The reservation module checks overlapping reservations to help prevent double booking of campus resources.
 
-The repository contains some similarly named route/controller files, for example:
+### 5. Real-Time Communication
 
-event.controller.js
-eventController.js
-events.controller.js
+Socket.IO provides real-time messaging and communication capabilities.
 
-auth.js
-auth.routes.js
+### 6. Notification System
 
-users.js
-users.routes.js
-users.routes.js
+Users can receive and manage application notifications related to campus activities.
 
-schedule.routes.js
-scheduleRoutes.js
+### 7. Analytics Dashboard
 
-These should eventually be consolidated to make the project easier to maintain.
+Administrative dashboards provide user, registration, activity and system-level statistics.
 
-5. Development/demo data
+### 8. Calendar Integration
 
-The server contains initialization logic for default users and development behavior. Production credentials and secrets should never be retained in source code.
+Calendar interfaces are provided for schedule and campus activity management.
 
-🚀 Future Improvements
+---
 
-Potential future enhancements include:
+# 🌐 Application Modules
 
-Academic Management
+The application is organized into several major modules:
 
-Complete Courses module
+    Authentication
+         │
+         ├── Login
+         ├── Registration
+         ├── Password Reset
+         └── Authorization
+         
+    User Management
+         │
+         ├── Users
+         ├── Roles
+         ├── Departments
+         └── Profiles
+         
+    Events
+         │
+         ├── Event Creation
+         ├── Registration
+         ├── Attendance
+         └── Check-in
+         
+    Resources
+         │
+         ├── Resource Management
+         ├── Availability
+         └── Reservations
+         
+    Communication
+         │
+         ├── Conversations
+         ├── Messages
+         ├── Typing Indicators
+         └── Read Receipts
+         
+    Notifications
+         │
+         ├── Event Notifications
+         ├── Reservation Notifications
+         ├── Message Notifications
+         └── System Notifications
+         
+    Analytics
+         │
+         ├── User Statistics
+         ├── Registration Statistics
+         ├── Login Activity
+         └── System Health
 
-Course enrollment
+---
 
-Faculty-course mapping
+# 🧪 Development & Testing Notes
 
-Assignment management
+The repository includes testing dependencies and development tooling.
 
-Examination management
+Recommended development process:
 
-Results/grades
+1. Start MongoDB
+2. Configure `.env`
+3. Install backend dependencies
+4. Install frontend dependencies
+5. Start backend
+6. Start frontend
+7. Verify authentication
+8. Verify database connectivity
+9. Test major user workflows
+10. Run automated tests before deployment
 
-Attendance management
+---
 
-Campus Services
+# 🚀 Future Roadmap
 
-Library management
+The long-term roadmap can include:
 
-Hostel management
+### Phase 1
 
-Fee management
+- Complete current schedule implementation
+- Complete Courses module
+- Remove duplicate implementations
+- Improve validation
+- Expand automated tests
 
-Complaint management
+### Phase 2
 
-Transport management
+- Complete academic management
+- Course enrollment
+- Faculty-course mapping
+- Attendance
+- Assignments
+- Examination management
 
-Campus navigation
+### Phase 3
 
-Lost and found
+- Library management
+- Hostel management
+- Fee management
+- Complaint management
+- Transport management
 
-Communication
+### Phase 4
 
-Push notifications
+- Cloud deployment
+- Docker
+- CI/CD
+- Monitoring
+- Automated backups
+- Production security hardening
 
-Email notifications
+### Phase 5
 
-SMS notifications
+- AI-powered campus assistant
+- Predictive analytics
+- Intelligent resource allocation
+- Smart notifications
 
-Advanced group communication
+---
 
-File/document sharing
+# 👨‍💻 Author
 
-Intelligence & Analytics
+## Umesh Jatav
 
-Advanced campus analytics
+**B.Tech — Computer Science & Engineering**  
+**Indian Institute of Information Technology Vadodara**
 
-Resource utilization analysis
-
-Event participation analytics
-
-Predictive resource demand
-
-AI-powered campus assistant
-
-Infrastructure
-
-MongoDB Atlas deployment
-
-Cloud deployment
-
-Docker support
-
-CI/CD pipeline
-
-Automated backups
-
-Monitoring
-
-Centralized logging
-
-Security
-
-Two-factor authentication
-
-OTP verification
-
-Stronger session controls
-
-Security audit
-
-Automated vulnerability scanning
-
-Advanced permission management
-
-🤝 Contribution
-
-Contributions are welcome.
-
-1. Fork the repository
-
-2. Create a feature branch
-
-git checkout -b feature/your-feature
-
-3. Make your changes
-
-4. Test the changes
-
-5. Stage the changes
-
-git add .
-
-6. Commit
-
-git commit -m "Add your feature"
-
-7. Push
-
-git push origin feature/your-feature
-
-8. Open a Pull Request
-
-🔄 Git Workflow
-
-Check status
-
-git status
-
-Pull latest changes
-
-git pull
-
-Add changes
-
-git add .
-
-Commit
-
-git commit -m "Update Smart Campus Management System"
-
-Push
-
-git push
-
-📌 Project Information
-
-Property
-
-Details
-
-Project
-
-Smart Campus Management System
-
-Type
-
-Full-Stack Web Application
-
-Architecture
-
-MERN
-
-Frontend
-
-React 18
-
-Backend
-
-Node.js + Express
-
-Database
-
-MongoDB
-
-ODM
-
-Mongoose
-
-Authentication
-
-JWT
-
-Password Hashing
-
-bcrypt
-
-Real-Time
-
-Socket.IO
-
-State Management
-
-Redux Toolkit
-
-UI Framework
-
-Material UI
-
-Calendar
-
-FullCalendar / React Big Calendar
-
-Charts
-
-Chart.js
-
-Roles
-
-Admin / Lecturer / Student
-
-License
-
-MIT
-
-Status
-
-Active Development
-
-👨‍💻 Author
-
-Umesh Jatav
-
-B.Tech — Computer Science & EngineeringIndian Institute of Information Technology Vadodara
-
-GitHub
+### GitHub
 
 https://github.com/UJumesh
 
-Project Repository
+### Project Repository
 
 https://github.com/UJumesh/smart-campus-management-IIITV-
 
-Add your LinkedIn and LeetCode links here if you want them displayed in the README.
+---
 
-📈 Project Status
+# 📈 Project Status
 
-Active Development
+**Active Development**
 
 The Smart Campus Management System is an academic full-stack software engineering project focused on centralizing campus users, events, resources, reservations, scheduling, communication, notifications, and administrative analytics.
 
 The architecture is designed to allow additional campus modules to be added as development continues.
 
-⚠️ Disclaimer
+---
 
-This project is developed for academic, educational, demonstration, and software-development purposes.
+# ⚠️ Disclaimer
+
+This project is developed for **academic, educational, demonstration, and software-development purposes**.
 
 It should not be considered production-ready without additional:
 
-Security auditing
+- Security auditing
+- Infrastructure hardening
+- Database security configuration
+- Comprehensive testing
+- Monitoring
+- Backup strategy
+- Privacy controls
+- Production-grade secret management
 
-Infrastructure hardening
+---
 
-Database security configuration
+# ⭐ Support
 
-Comprehensive testing
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
 
-Monitoring
+---
 
-Deployment configuration
+## 🏫 Smart Campus Management System
 
-Backup strategy
-
-Privacy controls
-
-Production-grade secret management
-
-⭐ Support
-
-If you find the project useful, consider giving the repository a ⭐ on GitHub.
-
-Smart Campus Management System
-
-One platform for smarter campus management.
+### One Platform for Smarter Campus Management.
